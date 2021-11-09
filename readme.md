@@ -12,10 +12,14 @@ The scales from top to bottom are:
 
 -Double Logarithmic (1 to 10 to 100)
 -Folded Single Logarithmic with index at Pi (π to 10, 1 to π)
+
 Blue line denoting boundary between sliding bit and stationary bit
+
 -Folded Single Logarithmic with index at Pi (π to 10, 1 to π)
 -Red Inverse Single Logarithmic (10 to 1)
 -Single Logarithmic (1 to 10)
+
 Blue line denoting boundary between sliding bit and stationary bit
+
 -Single Logarithmic (1 to 10)
 -Linear (0 to 1)

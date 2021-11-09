@@ -9,7 +9,6 @@ This might not be too bad if I can figure out how to make rectangles and apply t
 ![](https://user-images.githubusercontent.com/36782760/140880806-4bd9d857-4db1-4a09-a6aa-9d42377ae4d1.png)
 
 The scales from top to bottom are:
-
 1. Double Logarithmic (1 to 10 to 100)
 2. Folded Single Logarithmic with index at Pi (π to 10, 1 to π)
 * Blue line denoting boundary between sliding bit and stationary bit

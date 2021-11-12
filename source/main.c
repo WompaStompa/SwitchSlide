@@ -14,16 +14,16 @@ int main(int argc, char* argv[]) {
 	Framebuffer fb;
 	framebufferCreate(&fb, win, FB_WIDTH, FB_HEIGHT, PIXEL_FORMAT_RGBA_8888, 2);
 	framebufferMakeLinear(&fb);
-
+	
 	u8* imageptr = (u8*)image_bin;
 	const u32 image_width = FB_WIDTH;
 	const u32 image_height = FB_HEIGHT;
-
+	
 	padConfigureInput(1, HidNpadStyleSet_NpadStandard);
 	PadState pad;
 	padInitializeDefault(&pad);
 	hidInitializeTouchScreen();
-
+	
 	s32 prev_touchcount=0;
 	int cursor = 0, cursorOld = 0, touchI = 0, cursBool = 0;
 	bool inhib = false;
@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
 		
 		u32 stride;
 		u32* framebuf = (u32*)framebufferBegin(&fb, &stride);
-
+		
 		for (u32 y = 0; y < FB_HEIGHT; y++) {
 			for (u32 x = 0; x < FB_WIDTH; x++) {
 				u32 pos = y*stride/sizeof(u32) + x;

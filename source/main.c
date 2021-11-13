@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
 					touchI = state.touches[0].x;
 					inhib = true;
 				}
-			} else {	inhib = false; }
+			} else { inhib = false; }
 		}
 		
 		u32 stride;

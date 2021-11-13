@@ -8,7 +8,7 @@ Like a slide rule, but for Switch.
 ![](https://user-images.githubusercontent.com/36782760/141604382-1a0f2fd2-ddb3-4785-abec-1b3125e6f2a6.png)
 
 ### Issues:
-* Slowly sliding your finger horizontally across the screen is kind of jittery and makes lining up your calculation a bit of a pain. To counter this, slide at a normal speed and a steep vertical angle. The vertical component of the slide will effectively just get ignored but the small horizontal component will always be accounted for.
+* Slowly sliding your finger horizontally across the screen is kinda jittery and makes lining up your calculation a bit of a pain. To counter this, slide at a normal speed and a steep vertical angle. The vertical component of the slide will effectively just get ignored but the small horizontal component will always be accounted for.
 * The scales won't line up perfectly when slid relative to one another because I only lined up the gradations with the nearest pixel. So for example, the 3.4 line would go at x position 1280*log₁₀(3.4) = 680.293, so I just put it at x coordinate 680. They should all be close enough to the true value that the power of estimation will give you accurate enough results.
 
 ### Take advantage of the power of iteration to get increasingly accurate results. For example, say you wanted to know 590÷101.

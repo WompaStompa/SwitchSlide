@@ -36,7 +36,7 @@ The scales from top to bottom are:
 3. Folded Single Logarithmic with index at Pi (π to 10, 10 = 1, 1 to π)
 4. Red Inverse Single Logarithmic (10 to 1)
 5. Single Logarithmic (1 to 10)
-* Blue line denoting boundary between slide and botom stator bit
+* Blue line denoting boundary between slide and botom stator
 6. Single Logarithmic (1 to 10)
 7. Linear (0 to 1)
 

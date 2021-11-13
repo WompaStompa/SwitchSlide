@@ -31,9 +31,9 @@ X | Reset the hairline position.
 
 The scales from top to bottom are:
 1. Double Logarithmic (1 to 10 to 100)
-2. Folded Single Logarithmic with index at Pi (π to 10, 1 to π)
+2. Folded Single Logarithmic with index at Pi (π to 10, 10 = 1, 1 to π)
 * Blue line denoting boundary between slide bit and top stator
-3. Folded Single Logarithmic with index at Pi (π to 10, 1 to π)
+3. Folded Single Logarithmic with index at Pi (π to 10, 10 = 1, 1 to π)
 4. Red Inverse Single Logarithmic (10 to 1)
 5. Single Logarithmic (1 to 10)
 * Blue line denoting boundary between slide and botom stator bit

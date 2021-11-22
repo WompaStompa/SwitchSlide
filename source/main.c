@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 	hidInitializeTouchScreen();
 	
 	s32 prev_touchcount=0;
-	int touchI = 0;
+	int touchI = 0, scaleNum = 0;
 	int hLine = 0, hLineOld = 0, hairBool = 0;
 	int slide = 0, slideOld = 0, slideBool = 0;
 	bool inhib = false;
@@ -35,6 +35,7 @@ int main(int argc, char* argv[]) {
 		if (kDown & HidNpadButton_A) { slideBool = !slideBool; }
 		if (kDown & HidNpadButton_B) { slide = 0; }
 		if (kDown & HidNpadButton_X) { hLine = 0; }
+		if (kDown & HidNpadButton_Y) { scaleNum++; scaleNum %= 2; }
 		HidTouchScreenState state={0};
 		
 		if (hidGetTouchScreenStates(&state, 1)) {
@@ -60,21 +61,21 @@ int main(int argc, char* argv[]) {
 				u32 pos = y*stride/sizeof(u32) + x;
 				hairBool = !(x - hLine);
 				
-				u32 imagepos = y * FB_WIDTH + x;
+				u32 imagepos = (y + scaleNum*FB_HEIGHT)*FB_WIDTH + x;
 				framebuf[pos] = RGBA8_MAXALPHA((!hairBool)*imageptr[imagepos*3+2], hairBool*0xFF + (!hairBool)*imageptr[imagepos*3+1], (!hairBool)*imageptr[imagepos*3+0]);
 			}
 			for (u32 y = FB_HEIGHT/3; y < 2*FB_HEIGHT/3; y++) {
 				u32 pos = y*stride/sizeof(u32) + x;
 				hairBool = !(x - hLine);
 				
-				u32 imagepos = y * FB_WIDTH + (x - slide + FB_WIDTH)%FB_WIDTH;
+				u32 imagepos = (y + scaleNum*FB_HEIGHT)*FB_WIDTH + (x - slide + FB_WIDTH)%FB_WIDTH;
 				framebuf[pos] = RGBA8_MAXALPHA((!hairBool)*imageptr[imagepos*3+2], hairBool*0xFF + (!hairBool)*imageptr[imagepos*3+1], (!hairBool)*imageptr[imagepos*3+0]);
 			}
 			for (u32 y = 2*FB_HEIGHT/3; y < FB_HEIGHT; y++) {
 				u32 pos = y*stride/sizeof(u32) + x;
 				hairBool = !(x - hLine);
 				
-				u32 imagepos = y * FB_WIDTH + x;
+				u32 imagepos = (y + scaleNum*FB_HEIGHT)*FB_WIDTH + x;
 				framebuf[pos] = RGBA8_MAXALPHA((!hairBool)*imageptr[imagepos*3+2], hairBool*0xFF + (!hairBool)*imageptr[imagepos*3+1], (!hairBool)*imageptr[imagepos*3+0]);
 			}
 		}

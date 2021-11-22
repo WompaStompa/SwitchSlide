@@ -43,7 +43,7 @@ SOURCES		:=	source
 DATA		:=	data
 INCLUDES	:=	include
 APP_AUTHOR	:=	WompaStompa
-APP_VERSION	:=	0.1.0
+APP_VERSION	:=	0.1.1
 ICON		:=	icon.jpg
 #ROMFS	:=	romfs
 

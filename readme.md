@@ -7,9 +7,28 @@ Like a slide rule, but for Switch.
 
 ![](https://user-images.githubusercontent.com/36782760/141604382-1a0f2fd2-ddb3-4785-abec-1b3125e6f2a6.png)
 
-### Issues:
-* Slowly sliding your finger horizontally across the screen is kinda jittery and makes lining up your calculation a bit of a pain. To counter this, slide at a normal speed and a steep vertical angle. The vertical component of the slide will effectively just get ignored but the small horizontal component will always be accounted for.
-* The scales won't line up perfectly when slid relative to one another because I only lined up the gradations with the nearest pixel. So for example, the 3.4 line would go at x position 1280*log₁₀(3.4) = 680.293, so I just put it at x coordinate 680. They should all be close enough to the true value that the power of estimation will give you accurate enough results.
+The scales from top to bottom are:
+1. Double Logarithmic (1 to 10 to 100)
+2. Folded Single Logarithmic with index at Pi (π to 10, 10 = 1, 1 to π)
+* Blue line denoting boundary between slide and top stator
+3. Folded Single Logarithmic with index at Pi (π to 10, 10 = 1, 1 to π)
+4. Red Inverse Single Logarithmic (10 to 1)
+5. Single Logarithmic (1 to 10)
+* Blue line denoting boundary between slide and bottom stator
+6. Single Logarithmic (1 to 10)
+7. Linear (0 to 1)
+
+### Now with binary!
+![](https://user-images.githubusercontent.com/36782760/142800216-3feccd0f-34c3-44f8-a75a-eeca033bba01.png)
+
+The scales from left to right are:
+1. Single Logarithmic (1 to 2)
+* Blue line denoting boundary between slide and left stator
+2. Single Logarithmic (1 to 2)
+3. Red Inverse Logarithmic (2 to 1)
+* Blue line denoting boundary between slide and right stator
+4. Red Inverse Logarithmic (2 to 1)
+5. Double Logarithmic (1 to 2 to 4)
 
 ### Take advantage of the power of iteration to get increasingly accurate results. For example, say you wanted to know 590÷101.
 1. Estimate what the answer should be. 590 is about 600 and 101 is about 100, so 590÷101 should be about 6.
@@ -28,16 +47,12 @@ Touch Screen | Move the slide/hairline.
 A | Switch between moving the slide and hairline.
 B | Reset the slide position.
 X | Reset the hairline position.
+Y | Switch between the different scales.*
 
-The scales from top to bottom are:
-1. Double Logarithmic (1 to 10 to 100)
-2. Folded Single Logarithmic with index at Pi (π to 10, 10 = 1, 1 to π)
-* Blue line denoting boundary between slide and top stator
-3. Folded Single Logarithmic with index at Pi (π to 10, 10 = 1, 1 to π)
-4. Red Inverse Single Logarithmic (10 to 1)
-5. Single Logarithmic (1 to 10)
-* Blue line denoting boundary between slide and botom stator
-6. Single Logarithmic (1 to 10)
-7. Linear (0 to 1)
+*So far I only have decimal and binary scales. My current process is a tedious pain in the dick, but I might make more scales later.
+
+### Issues:
+* Slowly sliding your finger horizontally across the screen is kinda jittery and makes lining up your calculation a bit of a pain. To counter this, slide at a normal speed and a steep vertical angle. The vertical component of the slide will effectively just get ignored but the small horizontal component will always be accounted for.
+* The scales won't line up perfectly when slid relative to one another because I only lined up the gradations with the nearest pixel. So for example, the 3.4 line on the decimal scale would go at x position 1280×log₁₀(3.4) = 680.293, so I just put it at x coordinate 680. They should all be close enough to the true value that the power of estimation will give you accurate enough results.
 
 Fuck OpenGL and gpu compute, software render is all I need.
